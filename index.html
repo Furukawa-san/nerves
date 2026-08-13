@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="殿部から大腿に分布する末梢神経のつながり、運動・感覚支配、絞扼リスク部位を運動器リハビリテーション向けに整理した解説。">
+  <title>殿部・大腿の末梢神経｜運動器リハのための解剖と絞扼ポイント</title>
+  <style>
+    :root {
+      --ink: #172233;
+      --muted: #5b6878;
+      --line: #dce3eb;
+      --paper: #ffffff;
+      --bg: #f4f6f8;
+      --navy: #173b64;
+      --blue: #27649a;
+      --blue-soft: #e8f1f9;
+      --orange: #d76a24;
+      --orange-soft: #fff0e6;
+      --red: #bb3b3b;
+      --red-soft: #fff0f0;
+      --green: #35735a;
+      --green-soft: #e9f4ee;
+      --shadow: 0 14px 38px rgba(31, 45, 61, .08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    a { color: var(--blue); text-underline-offset: 3px; }
+    img { max-width: 100%; }
+    button, input { font: inherit; }
+    button:focus-visible, a:focus-visible {
+      outline: 3px solid #173b64;
+      outline-offset: 3px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(91, 177, 222, .26), transparent 28%),
+        linear-gradient(135deg, #102b49 0%, #173b64 60%, #20547d 100%);
+      padding: 72px 24px 64px;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -150px;
+      width: 430px;
+      height: 430px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+      box-shadow: 0 0 0 54px rgba(255,255,255,.035), 0 0 0 108px rgba(255,255,255,.025);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: #d8eaf6;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 4px; border-radius: 3px; background: #7ec5e8; }
+    h1 { margin: 0; max-width: 860px; font-size: clamp(2rem, 4.2vw, 3.8rem); line-height: 1.22; letter-spacing: -.035em; }
+    .hero p { max-width: 760px; margin: 22px 0 0; color: #e5eef5; font-size: clamp(1rem, 1.4vw, 1.18rem); }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 26px; }
+    .hero-tag { padding: 6px 11px; border: 1px solid rgba(255,255,255,.24); border-radius: 999px; background: rgba(255,255,255,.08); font-size: .84rem; }
+
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+    }
+    .sticky-nav-inner { display: flex; gap: 2px; max-width: 1120px; margin: 0 auto; padding: 8px 16px; white-space: nowrap; }
+    .sticky-nav a { padding: 9px 12px; border-radius: 9px; color: #445266; font-size: .86rem; font-weight: 700; text-decoration: none; }
+    .sticky-nav a:hover { color: var(--navy); background: var(--blue-soft); }
+
+    main { max-width: 1120px; margin: 0 auto; padding: 46px 22px 80px; }
+    section { scroll-margin-top: 78px; margin: 0 0 64px; }
+    .section-head { display: grid; grid-template-columns: 58px 1fr; gap: 14px; align-items: start; margin-bottom: 24px; }
+    .section-no { display: grid; place-items: center; width: 50px; height: 50px; color: white; border-radius: 14px; background: var(--navy); font-weight: 800; }
+    h2 { margin: 0; color: var(--navy); font-size: clamp(1.55rem, 2.5vw, 2.15rem); line-height: 1.35; letter-spacing: -.02em; }
+    .section-lead { margin: 6px 0 0; color: var(--muted); }
+    h3 { margin: 0 0 13px; color: var(--navy); font-size: 1.2rem; line-height: 1.45; }
+    h4 { margin: 0 0 8px; color: var(--ink); font-size: 1rem; }
+
+    .notice {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      margin: 0 0 28px;
+      padding: 17px 18px;
+      border: 1px solid #ead6a5;
+      border-radius: 14px;
+      background: #fffaf0;
+      color: #655224;
+    }
+    .notice strong { color: #513f14; }
+    .notice-icon { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #f1d78f; font-weight: 900; }
+
+    .key-grid, .figure-grid, .nerve-grid, .risk-grid, .assessment-grid { display: grid; gap: 18px; }
+    .key-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .key-card, .card, .figure-card, .nerve-card, .risk-card, .assessment-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .key-card { padding: 23px; }
+    .key-card.motor { border-top: 5px solid var(--blue); }
+    .key-card.sensory { border-top: 5px solid var(--orange); }
+    .key-card p { margin: 7px 0 0; color: var(--muted); }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 999px; font-size: .75rem; font-weight: 800; }
+    .pill.motor { color: var(--blue); background: var(--blue-soft); }
+    .pill.sensory { color: var(--orange); background: var(--orange-soft); }
+    .pill.mixed { color: var(--green); background: var(--green-soft); }
+    .pill.risk { color: var(--red); background: var(--red-soft); }
+    .nerve-legend { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 10px 0 16px; color: var(--muted); font-size: .82rem; }
+    .legend-item { display: inline-flex; align-items: center; gap: 6px; }
+    .nerve-marker { display: inline-grid; place-items: center; width: 22px; height: 22px; flex: 0 0 22px; border-radius: 50%; color: white; font-size: .72rem; font-weight: 900; line-height: 1; }
+    .nerve-marker.motor { background: var(--blue); }
+    .nerve-marker.sensory { background: var(--orange); }
+    .nerve-marker.mixed { background: var(--green); }
+    .branch-node .nerve-marker { width: 17px; height: 17px; flex-basis: 17px; margin-right: 4px; font-size: .6rem; vertical-align: -2px; }
+
+    .branch-map {
+      margin-top: 22px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .branch-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .branch-column { padding: 16px; border-radius: 14px; background: #f8fafc; }
+    .branch-column h3 { font-size: 1rem; }
+    .branch-list { display: grid; gap: 9px; }
+    .branch-node { position: relative; padding: 10px 11px; border: 1px solid #e3e8ef; border-radius: 10px; background: white; font-size: .87rem; }
+    .branch-node small { display: block; color: var(--muted); }
+    .direct-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .direct-link { padding: 9px 12px; border-radius: 10px; background: #eef4f8; color: var(--navy); font-size: .86rem; font-weight: 800; }
+    .arrow { margin: 0 5px; color: var(--orange); }
+
+    .figure-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .figure-card { overflow: hidden; }
+    .figure-stage { display: grid; place-items: center; min-height: 290px; padding: 18px; background: #f7f8fa; }
+    .figure-stage img { width: 100%; max-height: 520px; object-fit: contain; border-radius: 10px; }
+    .figure-body { padding: 19px 20px 21px; }
+    .figure-body p { margin: 0; color: var(--muted); font-size: .91rem; }
+    .figure-body ul { margin: 10px 0 0; padding-left: 1.2em; color: #465365; font-size: .9rem; }
+    .source-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .source-link { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border: 1px solid #d9e1e9; border-radius: 9px; color: var(--blue); background: white; font-size: .8rem; font-weight: 700; text-decoration: none; }
+    .source-link:hover { border-color: #a9bfd3; background: var(--blue-soft); }
+
+    .subhead-row { display: flex; justify-content: space-between; gap: 16px; align-items: end; margin: 30px 0 16px; }
+    .subhead-row p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 20px; }
+    .filter-btn { cursor: pointer; padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; color: #425166; background: white; font-size: .82rem; font-weight: 800; }
+    .filter-btn:hover, .filter-btn.active { color: white; border-color: var(--navy); background: var(--navy); }
+    .nerve-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .nerve-card { position: relative; overflow: hidden; padding: 20px; }
+    .nerve-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: var(--blue); }
+    .nerve-card[data-type="sensory"]::before { background: var(--orange); }
+    .nerve-card[data-type="mixed"]::before { background: var(--green); }
+    .nerve-card.hidden { display: none; }
+    .nerve-title { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 13px; }
+    .nerve-title h3 { display: flex; align-items: center; gap: 8px; margin: 0; }
+    .nerve-facts { display: grid; gap: 10px; }
+    .fact { display: grid; grid-template-columns: 84px 1fr; gap: 10px; font-size: .9rem; }
+    .fact dt { color: var(--muted); font-weight: 800; }
+    .fact dd { margin: 0; }
+    .risk-text { color: #8b3434; }
+    .table-note { margin: 10px 0 0; color: var(--muted); font-size: .82rem; }
+
+    .risk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .risk-card { padding: 20px; border-left: 5px solid var(--red); }
+    .risk-card p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .confidence { margin-top: 10px; font-size: .78rem; font-weight: 800; }
+    .confidence.high { color: #2f6f55; }
+    .confidence.mid { color: #94631a; }
+    .confidence.low { color: #7c5360; }
+
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: collapse; min-width: 780px; }
+    th, td { padding: 14px 15px; border-bottom: 1px solid #e5eaf0; text-align: left; vertical-align: top; }
+    th { color: var(--navy); background: #eef3f7; font-size: .83rem; letter-spacing: .02em; }
+    td { font-size: .9rem; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #fafcfd; }
+
+    .assessment-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); counter-reset: assess; }
+    .assessment-card { position: relative; padding: 55px 18px 19px; }
+    .assessment-card::before { counter-increment: assess; content: counter(assess); position: absolute; top: 16px; left: 18px; display: grid; place-items: center; width: 28px; height: 28px; color: white; border-radius: 8px; background: var(--navy); font-weight: 900; }
+    .assessment-card p { margin: 0; color: var(--muted); font-size: .88rem; }
+
+    .danger-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+    .danger-item { padding: 12px 14px; border: 1px solid #edd1d1; border-radius: 11px; color: #783131; background: #fff7f7; font-size: .88rem; }
+
+    .refs { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .refs ol { margin: 0; padding-left: 1.4em; }
+    .refs li { margin: 0 0 10px; color: #425065; font-size: .87rem; }
+    .license-note { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
+
+    footer { padding: 28px 22px; color: #738093; background: #e9edf1; text-align: center; font-size: .82rem; }
+
+    @media (max-width: 900px) {
+      .branch-columns, .assessment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 720px) {
+      .hero { padding: 54px 20px 48px; }
+      main { padding: 34px 16px 64px; }
+      section { margin-bottom: 52px; }
+      .key-grid, .figure-grid, .nerve-grid, .risk-grid, .danger-list { grid-template-columns: 1fr; }
+      .section-head { grid-template-columns: 44px 1fr; gap: 10px; }
+      .section-no { width: 40px; height: 40px; border-radius: 11px; }
+      .fact { grid-template-columns: 74px 1fr; }
+      .figure-stage { min-height: 220px; }
+    }
+    @media (max-width: 480px) {
+      .branch-columns, .assessment-grid { grid-template-columns: 1fr; }
+      .branch-map { padding: 16px; }
+    }
+    @media print {
+      body { background: white; font-size: 11pt; }
+      .hero { padding: 30px 18px; background: #173b64 !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .sticky-nav, .filter-bar { display: none; }
+      main { max-width: none; padding: 24px 16px; }
+      section { break-inside: avoid; margin-bottom: 34px; }
+      .figure-card, .nerve-card, .risk-card, .key-card, .branch-map, .table-wrap { box-shadow: none; }
+      a { color: inherit; }
+    }
+
+    /* html-report-analysis-theme: dark teal analysis surface */
+    :root {
+      --canvas: #081416;
+      --canvas-2: #0a1b1e;
+      --panel: #102d31;
+      --panel-soft: #0d2428;
+      --ink: #edf6f3;
+      --ink-soft: #c8dfdc;
+      --muted: #9dbab7;
+      --subtle: #6d918e;
+      --accent: #65d8d4;
+      --warm: #f0c98a;
+      --risk: #ef9c8f;
+      --line: rgba(157, 186, 183, .22);
+      --line-strong: rgba(101, 216, 212, .48);
+      --paper: var(--panel);
+      --bg: var(--canvas);
+      --navy: var(--accent);
+      --blue: var(--accent);
+      --blue-soft: rgba(101, 216, 212, .12);
+      --orange: var(--warm);
+      --orange-soft: rgba(240, 201, 138, .12);
+      --red: var(--risk);
+      --red-soft: rgba(239, 156, 143, .12);
+      --green: #7fd7ad;
+      --green-soft: rgba(127, 215, 173, .12);
+      --shadow: none;
+      --radius: 3px;
+    }
+    html { color-scheme: dark; background: var(--canvas); }
+    body {
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      letter-spacing: .012em;
+      border-top: 3px solid var(--accent);
+    }
+    a { color: var(--accent); }
+    button:focus-visible, a:focus-visible { outline-color: var(--accent); }
+    .hero {
+      color: var(--ink);
+      background: var(--canvas-2);
+      border-bottom: 1px solid var(--line);
+      padding: 62px 24px 56px;
+    }
+    .hero::after {
+      border-color: rgba(101, 216, 212, .22);
+      box-shadow: 0 0 0 54px rgba(101, 216, 212, .035), 0 0 0 108px rgba(101, 216, 212, .02);
+    }
+    .hero-inner { max-width: 960px; }
+    .eyebrow { color: var(--accent); letter-spacing: .18em; }
+    .eyebrow::before { background: var(--accent); }
+    h1, h2 { font-family: Georgia, "Times New Roman", "Yu Mincho", serif; }
+    h1 { color: var(--ink); font-weight: 700; }
+    .hero p { color: var(--ink-soft); }
+    .hero-tag { border-color: var(--line-strong); border-radius: 2px; background: transparent; color: var(--ink-soft); }
+    .sticky-nav { border-bottom-color: var(--line); background: rgba(8, 20, 22, .96); }
+    .sticky-nav-inner { max-width: 960px; }
+    .sticky-nav a { border-radius: 2px; color: var(--ink-soft); }
+    .sticky-nav a:hover { color: var(--accent); background: var(--panel-soft); }
+    main { max-width: 960px; }
+    section { margin-bottom: 72px; }
+    .section-head { border-top: 1px solid var(--line); padding-top: 22px; }
+    .section-no { width: auto; height: auto; justify-content: start; color: var(--accent); border-radius: 0; background: transparent; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .75rem; letter-spacing: .08em; }
+    h2 { color: var(--ink); }
+    .section-lead { color: var(--muted); }
+    h3 { color: var(--ink); }
+    h4 { color: var(--ink-soft); }
+    .notice { border: 1px solid var(--line-strong); border-left: 2px solid var(--accent); border-radius: 2px; background: var(--panel-soft); color: var(--ink-soft); }
+    .notice strong { color: var(--accent); }
+    .notice-icon { width: 26px; height: 26px; border: 1px solid var(--accent); border-radius: 2px; background: transparent; color: var(--accent); }
+    .key-card, .card, .figure-card, .nerve-card, .risk-card, .assessment-card { border-color: var(--line); border-radius: var(--radius); background: var(--panel); box-shadow: none; }
+    .key-card.motor { border-top-color: var(--accent); }
+    .key-card.sensory { border-top-color: var(--warm); }
+    .key-card p { color: var(--ink-soft); }
+    .pill { border: 1px solid currentColor; border-radius: 2px; background: transparent; }
+    .pill.motor { color: var(--accent); background: var(--blue-soft); }
+    .pill.sensory { color: var(--warm); background: var(--orange-soft); }
+    .pill.mixed { color: var(--green); background: var(--green-soft); }
+    .pill.risk { color: var(--risk); background: var(--red-soft); }
+    .nerve-marker.motor { background: var(--accent); color: var(--canvas); }
+    .nerve-marker.sensory { background: var(--warm); color: var(--canvas); }
+    .nerve-marker.mixed { background: var(--green); color: var(--canvas); }
+    .nerve-legend { color: var(--muted); }
+    .branch-map { border-color: var(--line-strong); border-radius: var(--radius); background: var(--panel); box-shadow: none; }
+    .branch-column { border: 1px solid var(--line); border-radius: 2px; background: var(--panel-soft); }
+    .branch-node { border-color: var(--line); border-radius: 2px; background: var(--canvas-2); color: var(--ink-soft); }
+    .branch-node small { color: var(--muted); }
+    .direct-link { border: 1px solid var(--line); border-radius: 2px; background: var(--panel-soft); color: var(--accent); }
+    .figure-stage { background: var(--panel-soft); }
+    .figure-body p, .figure-body ul { color: var(--ink-soft); }
+    .source-link { border-color: var(--line-strong); border-radius: 2px; color: var(--accent); background: transparent; }
+    .source-link:hover { border-color: var(--accent); background: var(--blue-soft); }
+    .filter-btn { border-color: var(--line-strong); border-radius: 2px; color: var(--ink-soft); background: transparent; }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--canvas); background: var(--accent); }
+    .nerve-card::before { background: var(--accent); }
+    .nerve-card[data-type="sensory"]::before { background: var(--warm); }
+    .nerve-card[data-type="mixed"]::before { background: var(--green); }
+    .fact dt { color: var(--muted); }
+    .fact dd { color: var(--ink-soft); }
+    .risk-text { color: var(--risk); }
+    .risk-card { border-left-color: var(--risk); }
+    .risk-card p { color: var(--ink-soft); }
+    .confidence.high { color: var(--green); }
+    .confidence.mid { color: var(--warm); }
+    .confidence.low { color: var(--risk); }
+    .table-wrap { border-color: var(--line); border-radius: var(--radius); background: var(--panel); box-shadow: none; }
+    th, td { border-color: var(--line); }
+    th { color: var(--accent); background: var(--panel-soft); }
+    td { color: var(--ink-soft); }
+    tbody tr:hover { background: var(--panel-soft); }
+    .table-note { color: var(--muted); }
+    .assessment-card::before { background: var(--accent); color: var(--canvas); }
+    .assessment-card p { color: var(--ink-soft); }
+    .danger-item { border-color: rgba(239, 156, 143, .42); border-radius: 2px; color: var(--ink-soft); background: var(--red-soft); }
+    .refs { border-color: var(--line); border-radius: var(--radius); background: var(--panel); }
+    .refs li { color: var(--ink-soft); }
+    .license-note { color: var(--muted); }
+    footer { border-top: 1px solid var(--line); color: var(--subtle); background: var(--canvas-2); }
+
+    @media print {
+      :root { --canvas: #fff; --canvas-2: #fff; --panel: #fff; --panel-soft: #f4f7f7; --ink: #152526; --ink-soft: #283c3d; --muted: #405657; --line: #b7c6c5; --line-strong: #5d8d8b; --accent: #116c69; --warm: #8b5d1f; --risk: #a33c2e; --paper: #fff; --bg: #fff; }
+      html { color-scheme: light; background: #fff; }
+      body { background: #fff; color: var(--ink); border-top-color: var(--accent); }
+      .section-head { border-top-color: var(--line); }
+      .key-card, .card, .figure-card, .nerve-card, .risk-card, .assessment-card, .branch-map, .table-wrap, .refs { background: #fff; }
+      .branch-column, .notice, .danger-item, th, .figure-stage { background: var(--panel-soft); }
+      .fact dd, td, .assessment-card p, .figure-body p, .figure-body ul, .key-card p, .risk-card p { color: var(--ink-soft); }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Clinical anatomy for rehabilitation</div>
+      <h1>殿部・大腿の末梢神経</h1>
+      <p>神経の「つながり」、運動・感覚支配、筋・筋膜・靱帯との位置関係、絞扼リスク部位を、運動器リハビリテーションの局在評価に使える形で整理する。</p>
+      <div class="hero-tags" aria-label="このページで扱う内容">
+        <span class="hero-tag">腰仙骨神経叢</span>
+        <span class="hero-tag">殿神経と殿皮神経</span>
+        <span class="hero-tag">Deep gluteal space</span>
+        <span class="hero-tag">絞扼リスク</span>
+        <span class="hero-tag">症状からの局在</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sticky-nav" aria-label="ページ内ナビゲーション">
+    <div class="sticky-nav-inner">
+      <a href="#overview">全体像</a>
+      <a href="#posterior">殿部・後大腿</a>
+      <a href="#anterior">前・内側大腿</a>
+      <a href="#entrapment">絞扼部位</a>
+      <a href="#localization">症状から局在</a>
+      <a href="#assessment">リハ評価</a>
+      <a href="#references">出典</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="notice" role="note">
+      <div class="notice-icon">!</div>
+      <div><strong>使い方：</strong>この資料は末梢神経レベルの解剖学的整理であり、単独所見から絞扼を確定するものではない。腰椎神経根・神経叢、股関節、腱、滑液包、術後変化などとの鑑別を前提とする。</div>
+    </div>
+
+    <section id="overview">
+      <div class="section-head">
+        <div class="section-no">01</div>
+        <div><h2>最初に区別する：「殿神経」と「殿皮神経」</h2><p class="section-lead">名前は似ているが、役割も由来も異なる。ここを分けると全体が整理しやすい。</p></div>
+      </div>
+
+      <div class="key-grid">
+        <article class="key-card motor">
+          <span class="pill motor">運動神経</span>
+          <h3>上殿神経・下殿神経</h3>
+          <p>仙骨神経叢の枝。上殿神経は中殿筋・小殿筋・大腿筋膜張筋、下殿神経は大殿筋を支配する。皮膚感覚領域は持たない。</p>
+        </article>
+        <article class="key-card sensory">
+          <span class="pill sensory">純知覚神経</span>
+          <h3>上・中殿皮神経＋下殿皮枝</h3>
+          <p>上・中殿皮神経は脊髄神経後枝由来。下殿皮枝は後大腿皮神経由来を基本とするが、内側下殿部には陰部神経・仙骨神経後枝由来の皮枝が加わることがある。皮神経単独の障害では、通常は直接の筋力低下や腱反射低下を説明しない。異常があれば根・叢・別神経を再評価する。</p>
+        </article>
+      </div>
+
+      <div class="branch-map" aria-label="神経のつながり">
+        <h3>神経の由来と親子関係</h3>
+        <div class="nerve-legend" aria-label="神経マーカーの凡例">
+          <span class="legend-item"><span class="nerve-marker motor" aria-hidden="true">✓</span>運動神経</span>
+          <span class="legend-item"><span class="nerve-marker sensory" aria-hidden="true">○</span>知覚神経</span>
+          <span class="legend-item"><span class="nerve-marker mixed" aria-hidden="true">＋</span>運動＋知覚</span>
+        </div>
+        <div class="branch-columns">
+          <div class="branch-column">
+            <h3>脊髄神経後枝</h3>
+            <div class="branch-list">
+              <div class="branch-node orange"><strong><span class="nerve-marker sensory" aria-hidden="true">○</span>上殿皮神経</strong><small>報告範囲 T11/T12–L5（個体差が大きい）</small></div>
+              <div class="branch-node orange"><strong><span class="nerve-marker sensory" aria-hidden="true">○</span>中殿皮神経</strong><small>S1–S3中心（S4も報告）</small></div>
+            </div>
+          </div>
+          <div class="branch-column">
+            <h3>腰神経叢</h3>
+            <div class="branch-list">
+              <div class="branch-node orange"><strong><span class="nerve-marker sensory" aria-hidden="true">○</span>大腿外側皮神経</strong><small>L2–L3</small></div>
+              <div class="branch-node"><strong><span class="nerve-marker mixed" aria-hidden="true">＋</span>大腿神経</strong><small>L2–L4 → 伏在神経</small></div>
+              <div class="branch-node"><strong><span class="nerve-marker mixed" aria-hidden="true">＋</span>閉鎖神経</strong><small>L2–L4</small></div>
+            </div>
+          </div>
+          <div class="branch-column">
+            <h3>仙骨神経叢</h3>
+            <div class="branch-list">
+              <div class="branch-node"><strong><span class="nerve-marker motor" aria-hidden="true">✓</span>上・下殿神経</strong><small>L4–S1 / L5–S2</small></div>
+              <div class="branch-node orange"><strong><span class="nerve-marker sensory" aria-hidden="true">○</span>後大腿皮神経</strong><small>S1–S3 → 下殿皮枝・会陰枝（変異あり）</small></div>
+              <div class="branch-node orange"><strong><span class="nerve-marker sensory" aria-hidden="true">○</span>仙骨神経後枝／陰部神経</strong><small>内側下殿部の皮枝に加わることがある</small></div>
+              <div class="branch-node"><strong><span class="nerve-marker mixed" aria-hidden="true">＋</span>坐骨神経</strong><small>L4–S3 → 脛骨・総腓骨</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="direct-links" aria-label="直接の分枝関係">
+          <span class="direct-link">大腿神経 <span class="arrow">→</span> 伏在神経</span>
+          <span class="direct-link">後大腿皮神経 <span class="arrow">→</span> 下殿皮枝（外側枝を基本）</span>
+          <span class="direct-link">仙骨神経後枝・陰部神経 <span class="arrow">→</span> 内側下殿部皮枝（変異）</span>
+          <span class="direct-link">坐骨神経 <span class="arrow">→</span> 脛骨神経＋総腓骨神経</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="posterior">
+      <div class="section-head">
+        <div class="section-no">02</div>
+        <div><h2>殿部・後大腿：深部の運動神経と表層の皮神経</h2><p class="section-lead">一枚目で全体、二枚目でdeep gluteal spaceを確認する。</p></div>
+      </div>
+
+      <div class="figure-grid">
+        <figure class="figure-card">
+          <div class="figure-stage">
+            <img src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/46cb/10584293/6f9a8b820f89/jagrr-7-e23.00091-g002.jpg" alt="殿部の殿神経・殿皮神経・坐骨神経・後大腿皮神経の解剖図" loading="eager">
+          </div>
+          <figcaption class="figure-body">
+            <h3>殿部神経の全体像</h3>
+            <p>深部を走る上・下殿神経、坐骨神経、後大腿皮神経と、表層へ広がる上・中・下殿皮神経を比較する図。</p>
+            <ul>
+              <li>「上殿神経」と「上殿皮神経」は別物</li>
+              <li>下殿皮枝は後大腿皮神経由来を基本とするが、内側下殿部には別由来の皮枝もある</li>
+              <li>坐骨神経は大腿皮膚を直接支配しない</li>
+            </ul>
+            <div class="source-row"><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10584293/" target="_blank" rel="noopener">原著ページ・図の出典</a><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10366308/" target="_blank" rel="noopener">下殿部枝の解剖研究</a></div>
+          </figcaption>
+        </figure>
+
+        <figure class="figure-card">
+          <div class="figure-stage">
+            <img src="https://www.mdpi.com/diagnostics/diagnostics-15-02531/article_deploy/html/images/diagnostics-15-02531-g002.png" alt="梨状筋、内閉鎖筋、双子筋、大腿方形筋と坐骨神経を示すdeep gluteal spaceの解剖図" loading="lazy">
+          </div>
+          <figcaption class="figure-body">
+            <h3>Deep gluteal space</h3>
+            <p>梨状筋だけでなく、内閉鎖筋－双子筋複合体、大腿方形筋、近位ハムストリングと坐骨神経の位置関係を見る。</p>
+            <ul>
+              <li>梨状筋周囲は候補の一つ</li>
+              <li>線維性バンド・術後瘢痕も圧迫源になり得る</li>
+              <li>坐骨大腿間隙と坐骨結節周囲も確認する</li>
+            </ul>
+            <div class="source-row"><a class="source-link" href="https://www.mdpi.com/2075-4418/15/19/2531" target="_blank" rel="noopener">論文・図の出典（CC BY 4.0）</a></div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="subhead-row"><div><h3>神経別まとめ</h3><p>ボタンで運動神経と知覚神経を絞り込める。</p></div></div>
+      <div class="filter-bar" aria-label="神経カードの絞り込み">
+        <button class="filter-btn active" type="button" data-filter="all">すべて</button>
+        <button class="filter-btn" type="button" data-filter="motor">運動神経</button>
+        <button class="filter-btn" type="button" data-filter="sensory">知覚神経</button>
+        <button class="filter-btn" type="button" data-filter="mixed">混合神経</button>
+      </div>
+
+      <div class="nerve-grid" id="nerve-cards">
+        <article class="nerve-card" data-type="motor">
+          <div class="nerve-title"><h3><span class="nerve-marker motor" aria-hidden="true">✓</span>上殿神経</h3><span class="pill motor">運動</span><span class="pill">L4–S1</span></div>
+          <dl class="nerve-facts">
+            <div class="fact"><dt>筋支配</dt><dd>中殿筋、小殿筋、大腿筋膜張筋</dd></div>
+            <div class="fact"><dt>機能</dt><dd>股関節外転、片脚支持での前額面骨盤制御</dd></div>
+            <div class="fact"><dt>感覚</dt><dd>皮膚感覚なし</dd></div>
+            <div class="fact"><dt>リスク部位</dt><dd class="risk-text">梨状筋上孔、中殿筋－小殿筋間。筋性絞扼よりTHA・骨折・外傷などの障害を重視</dd></div>
+          </dl>
+        </article>
+
+        <article class="nerve-card" data-type="motor">
+          <div class="nerve-title"><h3><span class="nerve-marker motor" aria-hidden="true">✓</span>下殿神経</h3><span class="pill motor">運動</span><span class="pill">L5–S2</span></div>
+          <dl class="nerve-facts">
+            <div class="fact"><dt>筋支配</dt><dd>大殿筋</dd></div>
+            <div class="fact"><dt>機能</dt><dd>股関節伸展。立ち上がり、階段、加速時に重要</dd></div>
+            <div class="fact"><dt>感覚</dt><dd>皮膚感覚なし</dd></div>
+            <div class="fact"><dt>リスク部位</dt><dd class="risk-text">梨状筋下孔～大殿筋深面。真の絞扼はまれで、手術・殿部外傷・筋注に注意</dd></div>
+          </dl>
+        </article>
+
+        <article class="nerve-card" data-type="sensory">
+          <div class="nerve-title"><h3><span class="nerve-marker sensory" aria-hidden="true">○</span>上殿皮神経</h3><span class="pill sensory">知覚のみ</span><span class="pill">T11/T12–L5</span></div>
+          <dl class="nerve-facts">
+            <div class="fact"><dt>感覚</dt><dd>腸骨稜直下～上殿部</dd></div>
+            <div class="fact"><dt>運動</dt><dd>なし。単独障害では直接の筋力・腱反射低下は起こさない</dd></div>
+            <div class="fact"><dt>特徴</dt><dd>腰痛や偽性坐骨神経痛として現れることがある</dd></div>
+            <div class="fact"><dt>リスク部位</dt><dd class="risk-text">腸骨稜と胸腰筋膜が作る骨線維性トンネル。古典的な代表値は正中から約7–8 cm外側だが、走行と根レベルには個体差がある</dd></div>
+          </dl>
+        </article>
+
+        <article class="nerve-card" data-type="sensory">
+          <div class="nerve-title"><h3><span class="nerve-marker sensory" aria-hidden="true">○</span>中殿皮神経</h3><span class="pill sensory">知覚のみ</span><span class="pill">S1–S3中心</span></div>
+          <dl class="nerve-facts">
+            <div class="fact"><dt>感覚</dt><dd>PSIS周辺～仙腸関節後面、内側殿部</dd></div>
+            <div class="fact"><dt>運動</dt><dd>なし</dd></div>
+            <div class="fact"><dt>特徴</dt><dd>仙腸関節由来痛に似る</dd></div>
+            <div class="fact"><dt>リスク部位</dt><dd class="risk-text">長後仙腸靱帯の下または靱帯を貫く部分。S4由来を含む枝の個体差がある</dd></div>
+          </dl>
+        </article>
+
+        <article class="nerve-card" data-type="sensory">
+          <div class="nerve-title"><h3><span class="nerve-marker sensory" aria-hidden="true">○</span>下殿皮枝</h3><span class="pill sensory">知覚のみ</span><span class="pill">後大腿皮神経由来を基本</span></div>
+          <dl class="nerve-facts">
+            <div class="fact"><dt>感覚</dt><dd>殿溝、坐骨結節周囲、下殿部。内側下殿部には別由来の皮枝が加わることがある</dd></div>
+            <div class="fact"><dt>運動</dt><dd>なし</dd></div>
+            <div class="fact"><dt>特徴</dt><dd>硬い座面での座位や殿部外傷で増悪しやすい</dd></div>
+            <div class="fact"><dt>リスク部位</dt><dd class="risk-text">大殿筋下縁、坐骨結節外側の線維性拡張部。枝と部位の対応には個体差がある</dd></div>
+          </dl>
+          <div class="source-row"><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10366308/" target="_blank" rel="noopener">下殿部枝の解剖研究</a></div>
+        </article>
+
+        <article class="nerve-card" data-type="sensory">
+          <div class="nerve-title"><h3><span class="nerve-marker sensory" aria-hidden="true">○</span>後大腿皮神経</h3><span class="pill sensory">知覚のみ</span><span class="pill">S1–S3（変異あり）</span></div>
+          <dl class="nerve-facts">
+            <div class="fact"><dt>感覚</dt><dd>下殿部、後大腿、膝窩付近。下殿枝・会陰枝などを出し、起始と分布に個体差がある</dd></div>
+            <div class="fact"><dt>運動</dt><dd>なし</dd></div>
+            <div class="fact"><dt>走行</dt><dd>坐骨神経より表層で、ハムストリングの表層を下行</dd></div>
+            <div class="fact"><dt>リスク部位</dt><dd class="risk-text">梨状筋下孔、坐骨結節外側、大殿筋下縁</dd></div>
+          </dl>
+        </article>
+
+        <article class="nerve-card" data-type="mixed">
+          <div class="nerve-title"><h3><span class="nerve-marker mixed" aria-hidden="true">＋</span>坐骨神経</h3><span class="pill mixed">運動＋遠位知覚</span><span class="pill">L4–S3</span></div>
+          <dl class="nerve-facts">
+            <div class="fact"><dt>筋支配</dt><dd>ハムストリング、大内転筋ハムストリング部。遠位では下腿・足部筋群</dd></div>
+            <div class="fact"><dt>感覚</dt><dd>大腿皮膚の直接支配なし。脛骨・総腓骨神経の枝を介して下腿・足の大部分へ。ただし下腿内側～足内側の一部は伏在神経領域</dd></div>
+            <div class="fact"><dt>構成</dt><dd>脛骨神経成分＋総腓骨神経成分</dd></div>
+            <div class="fact"><dt>リスク部位</dt><dd class="risk-text">梨状筋周囲、線維性バンド、内閉鎖筋－双子筋、大腿方形筋、近位ハムストリング</dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section id="anterior">
+      <div class="section-head">
+        <div class="section-no">03</div>
+        <div><h2>前・外側・内側大腿：腰神経叢からの枝</h2><p class="section-lead">根からの分岐、筋支配、皮膚感覚を別々の図で重ね合わせる。</p></div>
+      </div>
+
+      <div class="figure-grid">
+        <figure class="figure-card">
+          <div class="figure-stage"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Lumbar_plexus.svg" alt="腰神経叢から大腿神経、閉鎖神経、大腿外側皮神経が分岐する模式図" loading="lazy"></div>
+          <figcaption class="figure-body">
+            <h3>腰神経叢の枝分かれ</h3>
+            <p>L2–L4から大腿神経と閉鎖神経、L2–L3から大腿外側皮神経が形成される。大腿神経の終末知覚枝が伏在神経。</p>
+            <div class="source-row"><a class="source-link" href="https://commons.wikimedia.org/wiki/File:Lumbar_plexus.svg" target="_blank" rel="noopener">Wikimedia Commons（CC BY 3.0）</a></div>
+          </figcaption>
+        </figure>
+
+        <figure class="figure-card">
+          <div class="figure-stage"><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Gray827.png" alt="大腿神経、閉鎖神経、伏在神経と大腿筋群の解剖図" loading="lazy"></div>
+          <figcaption class="figure-body">
+            <h3>大腿神経・閉鎖神経・伏在神経</h3>
+            <p>前大腿と内側大腿における筋枝を確認する。短内転筋が閉鎖神経前枝・後枝の位置関係を分ける重要な指標。</p>
+            <div class="source-row"><a class="source-link" href="https://commons.wikimedia.org/wiki/File:Gray827.png" target="_blank" rel="noopener">Gray’s Anatomy / Public domain</a></div>
+          </figcaption>
+        </figure>
+
+        <figure class="figure-card">
+          <div class="figure-stage"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Gray546-LFC.png" alt="鼠径靱帯近傍を通過する大腿外側皮神経の図" loading="lazy"></div>
+          <figcaption class="figure-body">
+            <h3>大腿外側皮神経と鼠径靱帯</h3>
+            <p>純知覚神経。ASIS近傍で鼠径靱帯の下・中・上を通る変異があり、表面指標だけで走行を決めつけない。</p>
+            <div class="source-row"><a class="source-link" href="https://commons.wikimedia.org/wiki/File:Gray546-LFC.png" target="_blank" rel="noopener">Wikimedia Commons / Public domain</a></div>
+          </figcaption>
+        </figure>
+
+        <figure class="figure-card">
+          <div class="figure-stage"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Gray826and831.svg" alt="下肢前面と後面の皮神経支配領域図" loading="lazy"></div>
+          <figcaption class="figure-body">
+            <h3>下肢の皮神経分布</h3>
+            <p>大腿外側皮神経、後大腿皮神経、伏在神経、殿皮神経の大まかな分布を比較する。境界には個体差と重複がある。</p>
+            <div class="source-row"><a class="source-link" href="https://commons.wikimedia.org/wiki/File:Gray826and831.svg" target="_blank" rel="noopener">Gray’s Anatomy / Wikimedia Commons</a></div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="nerve-grid" style="margin-top: 28px">
+        <article class="nerve-card" data-type="sensory">
+          <div class="nerve-title"><h3><span class="nerve-marker sensory" aria-hidden="true">○</span>大腿外側皮神経</h3><span class="pill sensory">知覚のみ</span><span class="pill">L2–L3</span></div>
+          <dl class="nerve-facts">
+            <div class="fact"><dt>感覚</dt><dd>前外側～外側大腿</dd></div>
+            <div class="fact"><dt>運動</dt><dd>なし。筋力・腱反射は正常</dd></div>
+            <div class="fact"><dt>症候</dt><dd>Meralgia paresthetica。灼熱痛、しびれ、感覚低下</dd></div>
+            <div class="fact"><dt>リスク部位</dt><dd class="risk-text">ASIS内側の鼠径靱帯付近。ベルトなどの外部圧迫にも注意</dd></div>
+          </dl>
+        </article>
+
+        <article class="nerve-card" data-type="mixed">
+          <div class="nerve-title"><h3><span class="nerve-marker mixed" aria-hidden="true">＋</span>大腿神経</h3><span class="pill mixed">運動＋知覚</span><span class="pill">L2–L4</span></div>
+          <dl class="nerve-facts">
+            <div class="fact"><dt>筋支配</dt><dd>腸骨筋、縫工筋、大腿四頭筋、通常は恥骨筋の一部</dd></div>
+            <div class="fact"><dt>感覚</dt><dd>前大腿。伏在神経を介して内側膝～下腿内側</dd></div>
+            <div class="fact"><dt>所見</dt><dd>膝伸展低下、膝蓋腱反射低下、前大腿感覚障害</dd></div>
+            <div class="fact"><dt>リスク部位</dt><dd class="risk-text">大腰筋－腸骨筋間、腸骨筋膜下、鼠径靱帯下。腸腰筋血腫・腫瘤・術後にも注意</dd></div>
+          </dl>
+        </article>
+
+        <article class="nerve-card" data-type="mixed">
+          <div class="nerve-title"><h3><span class="nerve-marker mixed" aria-hidden="true">＋</span>閉鎖神経</h3><span class="pill mixed">運動＋小範囲知覚</span><span class="pill">L2–L4</span></div>
+          <dl class="nerve-facts">
+            <div class="fact"><dt>筋支配</dt><dd>長・短内転筋、薄筋、外閉鎖筋、大内転筋内転部。恥骨筋は変異あり</dd></div>
+            <div class="fact"><dt>感覚</dt><dd>内側大腿の小範囲。個体差・他神経との重複が大きい</dd></div>
+            <div class="fact"><dt>所見</dt><dd>深い鼠径部～内側大腿痛、内転筋力低下</dd></div>
+            <div class="fact"><dt>リスク部位</dt><dd class="risk-text">外閉鎖筋を通る後枝、長内転筋－短内転筋間筋膜、内側大腿回旋動脈近傍</dd></div>
+          </dl>
+        </article>
+
+        <article class="nerve-card" data-type="sensory">
+          <div class="nerve-title"><h3><span class="nerve-marker sensory" aria-hidden="true">○</span>伏在神経</h3><span class="pill sensory">知覚のみ</span><span class="pill">L3–L4</span></div>
+          <dl class="nerve-facts">
+            <div class="fact"><dt>つながり</dt><dd>大腿神経の終末知覚枝</dd></div>
+            <div class="fact"><dt>感覚</dt><dd>膝蓋下枝：膝前内側。主幹：下腿内側～内果・足内側</dd></div>
+            <div class="fact"><dt>運動</dt><dd>なし。大腿四頭筋筋力と膝蓋腱反射は正常</dd></div>
+            <div class="fact"><dt>リスク部位</dt><dd class="risk-text">内転管の縫工筋深面・広筋内転筋膜、内転管出口、膝内側の膝蓋下枝</dd></div>
+          </dl>
+          <div class="source-row"><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9402865/" target="_blank" rel="noopener">内転管の解剖写真を確認</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="entrapment">
+      <div class="section-head">
+        <div class="section-no">04</div>
+        <div><h2>絞扼・障害を疑う代表部位</h2><p class="section-lead">解剖学的狭窄が比較的明確な部位と、臨床的には「リスク領域」に留まる部位を区別する。</p></div>
+      </div>
+
+      <div class="risk-grid">
+        <article class="risk-card"><h3>上殿皮神経｜腸骨稜</h3><p>胸腰筋膜と腸骨稜が作る骨線維性トンネル。局所圧迫で上殿部への放散が再現されることがある。</p><div class="confidence high">解剖学的支持：あり｜臨床診断の確度：未確立</div></article>
+        <article class="risk-card"><h3>中殿皮神経｜長後仙腸靱帯</h3><p>神経が靱帯の下または内部を通る。仙腸関節周囲痛との鑑別が重要。</p><div class="confidence high">解剖学的支持：あり｜臨床診断の確度：未確立</div></article>
+        <article class="risk-card"><h3>後大腿皮・下殿皮｜坐骨結節外側</h3><p>大殿筋下縁と坐骨由来の線維性拡張部。座位痛、殿溝～後大腿の知覚症状を生じ得る。</p><div class="confidence mid">解剖研究・症例報告｜臨床診断の確度：未確立</div></article>
+        <article class="risk-card"><h3>坐骨神経｜Deep gluteal space</h3><p>梨状筋、線維性バンド、内閉鎖筋－双子筋、大腿方形筋、坐骨大腿間隙、近位ハムストリング瘢痕を含む。</p><div class="confidence mid">複数病態を含む症候群｜原因特定には追加評価</div></article>
+        <article class="risk-card"><h3>大腿外側皮神経｜鼠径靱帯</h3><p>ASIS内側近傍で鼠径靱帯を通過する。ただし走行変異が大きい。</p><div class="confidence high">解剖学的支持：あり｜鑑別を要する</div></article>
+        <article class="risk-card"><h3>大腿神経｜腸腰筋・腸骨筋膜下</h3><p>異常筋束による分割・被覆は解剖学的に存在するが、臨床では血腫・腫瘤・手術・外傷を優先して除外する。</p><div class="confidence mid">解剖学的リスク｜臨床では二次性圧迫を優先</div></article>
+        <article class="risk-card"><h3>閉鎖神経｜外閉鎖筋・内転筋間</h3><p>後枝が外閉鎖筋を通過する場合や、前枝が長内転筋－短内転筋間筋膜に強く接着する場合がある。</p><div class="confidence low">単一絞扼点は未確立｜リスク領域</div></article>
+        <article class="risk-card"><h3>伏在神経｜内転管</h3><p>縫工筋深面と広筋内転筋膜の間。内側膝痛、鵞足部痛、内側半月板由来痛と混同されやすい。</p><div class="confidence high">解剖学的支持：あり｜診断精度は未確立</div></article>
+      </div>
+    </section>
+
+    <section id="localization">
+      <div class="section-head">
+        <div class="section-no">05</div>
+        <div><h2>症状と運動所見から局在を絞る</h2><p class="section-lead">感覚分布だけでなく、選択的筋力低下と反射を組み合わせる。</p></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>症状・所見からの局在候補（単独所見で確定しない）</caption>
+          <thead><tr><th scope="col">主な症状・所見</th><th scope="col">候補（要統合）</th><th scope="col">局在を支える所見</th><th scope="col">主な鑑別</th></tr></thead>
+          <tbody>
+            <tr><td>腸骨稜上の限局した圧痛＋上殿部痛</td><td>上殿皮神経</td><td>筋力・反射正常、腸骨稜部で症状再現</td><td>椎間関節、胸腰椎移行部、仙腸関節</td></tr>
+            <tr><td>PSIS周辺～内側殿部痛</td><td>中殿皮神経</td><td>長後仙腸靱帯周辺の圧痛・放散</td><td>仙腸関節、腰椎由来痛</td></tr>
+            <tr><td>片脚支持で骨盤下制、外転筋力低下</td><td>上殿神経</td><td>中殿筋・小殿筋・TFLをまたぐ運動障害</td><td>腱板障害、疼痛抑制、L5根症</td></tr>
+            <tr><td>殿溝・坐骨結節周囲の座位痛、筋力正常</td><td>下殿皮枝／後大腿皮神経＋内側下殿部の別由来皮枝</td><td>後大腿の皮膚症状、遠位筋力正常</td><td>近位ハムストリング、坐骨滑液包、陰部神経</td></tr>
+            <tr><td>殿部～後大腿に加え下腿・足まで放散</td><td>坐骨神経または神経根</td><td>遠位筋力・反射・神経伸張所見を確認</td><td>腰仙部神経根、神経叢障害</td></tr>
+            <tr><td>前外側大腿の灼熱感・しびれのみ</td><td>大腿外側皮神経</td><td>筋力・反射正常、鼠径靱帯付近で増悪</td><td>L2–L3根症、股関節周囲痛</td></tr>
+            <tr><td>前大腿感覚障害＋膝伸展低下</td><td>大腿神経</td><td>膝蓋腱反射低下、伏在神経領域も障害</td><td>L2–L4根症、腰神経叢障害</td></tr>
+            <tr><td>鼠径部～内側大腿痛＋内転筋力低下</td><td>閉鎖神経</td><td>内転筋群の選択的筋力低下・EMG異常</td><td>内転筋腱、恥骨結合、股関節内病変</td></tr>
+            <tr><td>内側膝～下腿内側痛、筋力・反射正常</td><td>伏在神経</td><td>内転管または膝蓋下枝で症状再現</td><td>半月板、鵞足、MCL、膝関節枝</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">候補は局在推論の入口であり、単一の症状・圧痛・神経ブロックだけで診断を確定しない。</p>
+      </div>
+    </section>
+
+    <section id="assessment">
+      <div class="section-head">
+        <div class="section-no">06</div>
+        <div><h2>運動器リハでの評価手順</h2><p class="section-lead">神経を“触って当てる”のではなく、所見の組み合わせで局在の整合性を確認する。</p></div>
+      </div>
+
+      <div class="assessment-grid">
+        <article class="assessment-card"><h3>感覚分布</h3><p>灼熱感、しびれ、感覚低下の範囲を描く。皮神経の単独障害では直接の筋力・反射低下は生じにくい。異常があれば根・叢・別神経や疼痛抑制も再評価する。</p></article>
+        <article class="assessment-card"><h3>選択的筋力</h3><p>外転、伸展、膝伸展、内転、ハムストリングと遠位筋群を神経別に比較する。</p></article>
+        <article class="assessment-card"><h3>反射・根症</h3><p>膝蓋腱・アキレス腱反射、腰痛、咳・くしゃみ、複数神経にまたがる筋力低下を確認する。</p></article>
+        <article class="assessment-card"><h3>局所と負荷</h3><p>圧迫、座位、ベルト、股関節運動、術後肢位など、症状が再現・軽減する条件を確認する。</p></article>
+      </div>
+
+      <div class="notice" style="margin-top: 24px">
+        <div class="notice-icon">!</div>
+        <div><strong>神経伸張テストの解釈：</strong>SLR、slump、prone knee bendなどは神経系の機械感受性を変化させるが、単独で絞扼部位を特定する検査ではない。局所圧痛・感覚分布・運動所見・反射との整合性を確認する。</div>
+      </div>
+
+      <h3 style="margin-top: 28px">早めの医学的評価を優先する所見</h3>
+      <div class="danger-list">
+        <div class="danger-item">進行性の筋力低下、筋萎縮、腱反射消失</div>
+        <div class="danger-item">新規の膀胱直腸障害、会陰部感覚障害</div>
+        <div class="danger-item">抗凝固薬使用中の鼠径部痛＋急な膝伸展低下</div>
+        <div class="danger-item">術後・骨盤外傷後に生じた広範な神経症状</div>
+        <div class="danger-item">発熱、夜間痛、体重減少、腫瘤を伴う神経症状</div>
+        <div class="danger-item">安静でも急速に増悪する疼痛・感覚障害</div>
+      </div>
+    </section>
+
+    <section id="references">
+      <div class="section-head">
+        <div class="section-no">07</div>
+        <div><h2>主要参考資料・画像出典</h2><p class="section-lead">解剖図はオープンアクセスまたは公開条件が明確なものを使用。</p></div>
+      </div>
+      <div class="refs">
+        <ol>
+          <li>Ruan T, Jones AC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10584293/" target="_blank" rel="noopener">Superior Cluneal Nerve Entrapment Syndrome: Thought to Be Spondylolysis</a>. 殿神経・殿皮神経図。掲載誌コンテンツはCC BY 4.0。</li>
+          <li>Jiamjunyasiri A, et al. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10366308/" target="_blank" rel="noopener">Origin, course, and distribution of the posterior femoral cutaneous nerve and the spatial relationship among its branches</a>. 2023;98(4):540–547.</li>
+          <li>Yoon YH, et al. <a href="https://www.mdpi.com/2075-4418/15/19/2531" target="_blank" rel="noopener">Beyond Nerve Entrapment: A Narrative Review of Muscle–Tendon Pathologies in Deep Gluteal Syndrome</a>. Diagnostics. 2025;15:2531. CC BY 4.0.</li>
+          <li>Martin RR, Martin HD, Kivlan BR. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5717491/" target="_blank" rel="noopener">Nerve Entrapment in the Hip Region: Current Concepts Review</a>. Int J Sports Phys Ther. 2017.</li>
+          <li>Prudhon J, et al. <a href="https://pubmed.ncbi.nlm.nih.gov/37429990/" target="_blank" rel="noopener">Variations of the obturator nerve and implications in obturator nerve entrapment treatment</a>. Surg Radiol Anat. 2023.</li>
+          <li>Vázquez MT, et al. <a href="https://pubmed.ncbi.nlm.nih.gov/16583380/" target="_blank" rel="noopener">Femoral nerve entrapment: a new insight</a>. Clin Anat. 2007.</li>
+          <li>Lee SH, et al. <a href="https://pubmed.ncbi.nlm.nih.gov/27543938/" target="_blank" rel="noopener">Anatomy of the lateral femoral cutaneous nerve relevant to meralgia paresthetica</a>. Muscle Nerve. 2017.</li>
+          <li>Elazab EEB. <a href="https://pubmed.ncbi.nlm.nih.gov/28357555/" target="_blank" rel="noopener">Morphological study and relations of the fascia vasto-adductoria</a>. Surg Radiol Anat. 2017;39(10):1085–1095.</li>
+          <li>Lecigne R, et al. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9402865/" target="_blank" rel="noopener">Anatomical basis for ultrasound-guided infiltration of the saphenous nerve in the subsartorial canal</a>. Surg Radiol Anat. 2022. 縫工筋下管・伏在神経の解剖写真。</li>
+          <li>Konno T, et al. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5476578/" target="_blank" rel="noopener">Anatomical study of middle cluneal nerve entrapment</a>. J Pain Res. 2017.</li>
+          <li>Konno T, et al. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5677392/" target="_blank" rel="noopener">Anatomical etiology of pseudo-sciatica from superior cluneal nerve entrapment</a>. J Pain Res. 2017.</li>
+          <li>Gray’s Anatomy plates: <a href="https://commons.wikimedia.org/wiki/File:Lumbar_plexus.svg" target="_blank" rel="noopener">Lumbar plexus.svg</a>（CC BY 3.0）、<a href="https://commons.wikimedia.org/wiki/File:Gray827.png" target="_blank" rel="noopener">Gray827.png</a>、<a href="https://commons.wikimedia.org/wiki/File:Gray826and831.svg" target="_blank" rel="noopener">Gray826and831.svg</a>、<a href="https://commons.wikimedia.org/wiki/File:Gray546-LFC.png" target="_blank" rel="noopener">Gray546-LFC.png</a>。</li>
+        </ol>
+        <div class="license-note">画像の著作権・ライセンスは各出典ページに従う。Gray’s Anatomy原図はpublic domain。Lumbar plexus.svgはCC BY 3.0、Diagnostics掲載図はCC BY 4.0、殿神経・殿皮神経図の掲載元はCC BY 4.0。教育・資料利用時も原著者・掲載誌・URLを表示すること。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>運動器リハビリテーションの学習・臨床推論支援用｜最終更新 2026-08-13</footer>
+
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('#nerve-cards .nerve-card');
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          const filter = button.dataset.filter;
+          buttons.forEach(function (b) { b.classList.toggle('active', b === button); });
+          cards.forEach(function (card) {
+            card.classList.toggle('hidden', filter !== 'all' && card.dataset.type !== filter);
+          });
+        });
+      });
+    }());
+  </script>
+</body>
+</html>
